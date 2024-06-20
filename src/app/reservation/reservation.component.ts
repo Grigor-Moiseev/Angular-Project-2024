@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-reservation',
@@ -12,14 +13,16 @@ export class ReservationComponent {
   public searchInput!: string;
   public isShow: boolean = false;
 
-  constructor(public getData: ActivatedRoute) {
-    let reservDataList = localStorage.getItem('reservations');
-    if (reservDataList) {
-      this.reservData = JSON.parse(reservDataList).map((item: string) => JSON.parse(item));
-    } else {
-      this.reservData = [];
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, public getData: ActivatedRoute) {
+    if (isPlatformBrowser(this.platformId)) {
+      let reservDataList = localStorage.getItem('reservations');
+      if (reservDataList) {
+        this.reservData = JSON.parse(reservDataList).map((item: string) => JSON.parse(item));
+      } else {
+        this.reservData = [];
+      }
+      console.log(this.reservData);
     }
-    console.log(this.reservData);
   }
 
   reserveSearch() {

@@ -1,18 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
-  styleUrl: './booking.component.css'
+  styleUrls: ['./booking.component.css'] // Corrected styleUrl to styleUrls
 })
 export class BookingComponent {
 
-  constructor() {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     let todayDate = new Date();
     this.today = todayDate.toISOString().split('T')[0];
     this.guestCount = this.guestCountArr[0];
     this.time = this.timeArr[0];
     this.selectedTimeSlot = this.time;
+
+    if (isPlatformBrowser(this.platformId)) {
+      let reservDataList = localStorage.getItem('reservations');
+      if (reservDataList) {
+        this.reservData = JSON.parse(reservDataList);
+      } else {
+        this.reservData = [];
+      }
+    }
   }
 
   public today!: string;
@@ -38,13 +48,17 @@ export class BookingComponent {
         reservCode: this.randomCode
     };
     this.reservData.push(JSON.stringify(reservation));
-    localStorage.setItem('reservations', JSON.stringify(this.reservData));
+
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('reservations', JSON.stringify(this.reservData));
+    }
+
     this.isShow = true;
     let reservCode = document.querySelector("#reserv-alert");
     if (reservCode) {
         reservCode.scrollIntoView();
     }
-}
+  }
 
   reservationCode() {
     return Math.round(1000 + Math.random() * 9000);
