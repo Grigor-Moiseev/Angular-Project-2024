@@ -4,7 +4,7 @@ import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
-  styleUrls: ['./booking.component.css'] // Corrected styleUrl to styleUrls
+  styleUrl: './booking.component.css'
 })
 export class BookingComponent {
 
