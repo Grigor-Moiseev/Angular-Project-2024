@@ -1,0 +1,19 @@
+<div class="main">
+    <h1>Check you reservation</h1>
+    <div class="search">
+        <label for="search-input">Enter you reservation code:</label>
+        <div class="input-div">
+            <input [(ngModel)]="searchInput" id="search-input" type="number" placeholder="0000">
+            <button (click)="reserveSearch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </div>
+    <div *ngIf="isShow" class="container">
+        <div *ngFor="let data of filteredData" class="search-output">
+            <h3>Your serservation information:</h3>
+            <P>Your reservation code: {{data.reservCode}}</P>
+            <p>Number of Guests is: {{data.guestCount}}</p>
+            <p>Time: {{data.time}} Date: {{data.date}}</p>
+            <button (click)="hide()" class="close-btn">Close</button>
+        </div>
+    </div>
+</div>

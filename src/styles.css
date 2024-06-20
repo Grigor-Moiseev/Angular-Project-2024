@@ -1,0 +1,28 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+/* main{
+    padding-top: 70px;
+} */
+
+html{
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+    position: relative;
+}
+
+/* @media screen and (max-width: 768px) {
+    main{
+        padding-top: 70px;
+    }
+
+} */
+

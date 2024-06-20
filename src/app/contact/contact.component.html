@@ -1,0 +1,49 @@
+<div class="div-3">
+    <div class="div-3-card-containet">
+        <div class="card-1">
+            <ul>
+                <li><a routerLink="/">BAR 121</a></li>
+                <li><a href="#whats-on">What's On</a></li>
+                <li><a routerLink="menu">Menu</a></li>
+                <li><a routerLink="booking">Reserve a Table</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="card-2">
+            <div class="card-2-text">
+                <h3>Contact</h3>
+            </div>
+            <div class="card-2-text">
+                <p>123-456-7890</p>
+                <a href="mailto:info&#64;mysite.com">info&#64;mysite.com</a>
+            </div>
+            <div class="card-2-text">
+                <h3>Stay Connected</h3>
+                <div class="soc-icons">
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="card-3" id="contact">
+            <p>Join the Club & Get Updates on Special Events</p>
+            <div class="card-3-input">
+                <label for="email-id">Email *</label>
+                <input [(ngModel)]="email" type="email" id="email-id">
+                <button (click)="postEmail()">Subscribe</button>
+            </div>
+        </div>
+        <div class="card-4">
+            <h3>Opening Hours</h3>
+            <div class="text-1">
+                <p>Mon - Fri: 8am - 8pm</p>
+                <p>Saturday: 9am - 7pm</p>
+                <p>Sunday: 9am - 8pm</p>
+            </div>
+            <div class="text-1">
+                <p>500 Terry Francine St.</p>
+                <p>San Francisco, CA 94158</p>
+            </div>
+        </div>
+    </div>
+</div>

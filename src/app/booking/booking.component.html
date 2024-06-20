@@ -1,0 +1,47 @@
+<div class="booking-main">
+    <div id="reserv-alert" class="div-1">
+      <div class="header-text">
+        <h1>Make a reservation</h1>
+        <div *ngIf="isShow" class="reserv-confirm">
+          <button (click)="close()" class="close">x</button>
+          <p>Table reserved for {{guestCount}} Guest, </p>
+          <p>{{today}} at {{time}}</p>
+          <p>Your reservation code is:</p>
+          <p class="code">{{randomCode}}</p>
+          <p>Please save your reservation code!!!</p>
+        </div>
+        <p>To help us find the best table for you, select the preferred party size, date, and time of your reservation.</p>
+      </div>
+      <div class="slots">
+        <div class="slot">
+          <label for="guest-count">Number of guests</label>
+          <select id="guest-count" [(ngModel)]="guestCount">
+            <option *ngFor="let guest of guestCountArr" [value]="guest">{{ guest }} guest</option>
+          </select>
+        </div>
+        <div class="slot">
+          <label for="date">Date</label>
+          <input id="date" type="date" [(ngModel)]="today">
+        </div>
+        <div class="slot">
+          <label for="time">Time</label>
+          <select id="time" [(ngModel)]="time" (change)="onTimeChange($event)">
+            <option *ngFor="let time of timeArr" [value]="time">
+              {{ time }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <h3>Choose an available time slot:</h3>
+    <div class="div-2">
+      <div (click)="reserv(time)" *ngFor="let time of timeArr" class="time-slot" [class.selected]="time === selectedTimeSlot">
+        {{ time }}
+      </div>
+    </div>
+    <div class="div-3">
+      <button (click)="makeReservation()">Make Reservation</button>
+      <button routerLink="/reservation">Check Reservation</button>
+    </div>
+  </div>
+  

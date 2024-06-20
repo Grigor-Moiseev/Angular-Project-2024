@@ -1,0 +1,26 @@
+<div class="menu-main">
+    <div class="div-1">
+      <img src="https://static.wixstatic.com/media/c837a6_d96195029335444ebb716655977cf2f6~mv2.jpg/v1/fill/w_1305,h_451,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/c837a6_d96195029335444ebb716655977cf2f6~mv2.jpg"
+           alt="">
+    </div>
+    <div class="div-2">
+      <p class="header-text">Delicious Pub Food & Drinks</p>
+      <div class="menu-card">
+        <h1>Menu</h1>
+        <p>I'm a menu description. Click me and then “Edit Menu” to open the Restaurant Menu editor and change my text.</p>
+      </div>
+      <div *ngFor="let item of menuList.menu" class="menu-name">
+        <div class="menu-card-items">
+          <div class="item-1">
+            <h2>{{item.dish}}</h2>
+            <img [src]="item.img" alt="Dish">
+            <p>{{item.discription}}</p>
+          </div>
+          <div class="item-2">
+            <p>{{item.currency}}{{item.price}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
