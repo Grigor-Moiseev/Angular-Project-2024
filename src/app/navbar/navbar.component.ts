@@ -17,4 +17,8 @@ export class NavbarComponent {
     }
   }
 
+  mobMenuClose () {
+    this.isShow = false;
+  }
+
 }

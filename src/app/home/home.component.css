@@ -249,9 +249,6 @@
 }
 
 @media screen and (min-width:769px) and (max-width:1280px){
-    /* *{
-        border: 2px solid rebeccapurple;
-    } */
 
     .text-2 > p{
         font-size: 16px;
@@ -331,10 +328,8 @@
 
     #whats-on{
         font-size: 40px;
-        font-weight: bold;
-        text-align: left;
+        text-align: center;
         width: 60%;
-        margin-bottom: 50px;
     }
     
 

@@ -199,12 +199,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 @media screen and (max-width: 768px) {
 
     .header-text>h1 {
-        font-size: 45px;
+        font-size: 40px;
         text-align: center;
     }
 
     .header-text > p{
         text-align: center;
+        padding: 0px 2px;
     }
 
     .slots {
@@ -221,5 +222,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     .div-2 {
         width: 99%;
         height: 100%;
+    }
+
+    .reserv-confirm{
+        margin-top: 15px;
     }
 }

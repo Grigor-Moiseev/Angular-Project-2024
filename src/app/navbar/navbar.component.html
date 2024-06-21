@@ -1,6 +1,6 @@
 <nav class="main-nav">
     <div class="nav-1">
-        <a routerLinkActive="active-page" [routerLinkActiveOptions]="{exact:true}" routerLink="/">
+        <a (click)="mobMenuClose()" routerLinkActive="active-page" [routerLinkActiveOptions]="{exact:true}" routerLink="/">
             <h2>BAR 121</h2>
         </a>
     </div>
@@ -22,10 +22,10 @@
 </nav>
 <div *ngIf="isShow" class="mob-menu">
     <ul>
-        <li><a href="#whats-on">What's On</a></li>
-        <li><a routerLink="/menu" routerLinkActive="active-page">Menu</a></li>
-        <li><a routerLink="/booking" routerLinkActive="active-page">Book a Table</a></li>
-        <li><a href="#contact" routerLinkActive="active-page">Contact</a></li>
+        <li><a (click)="mobMenuClose()" href="#whats-on">What's On</a></li>
+        <li><a (click)="mobMenuClose()" routerLink="/menu" routerLinkActive="active-page">Menu</a></li>
+        <li><a (click)="mobMenuClose()" routerLink="/booking" routerLinkActive="active-page">Book a Table</a></li>
+        <li><a (click)="mobMenuClose()" href="#contact" routerLinkActive="active-page">Contact</a></li>
     </ul>
 
 </div>

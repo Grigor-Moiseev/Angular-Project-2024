@@ -54,7 +54,7 @@ export class BookingComponent {
     }
 
     this.isShow = true;
-    let reservCode = document.querySelector("#reserv-alert");
+    let reservCode = document.querySelector(".booking-main");
     if (reservCode) {
         reservCode.scrollIntoView();
     }
